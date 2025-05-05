@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+   
+    <title>Login - Digitally signed Satbara </title>
+    <!-- Load jQuery first -->
+    <script src="DSLR/Scripts/jquery-3.6.1.min.js"></script>
+    <!-- Then load Bootstrap -->
+    <link href="DSLR/Content/bootstrap.css" rel="stylesheet" />
+    <link href="DSLR/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="DSLR/CSS/Style.css" rel="stylesheet" />
+    <!-- Then load other scripts -->
+    <script src="DSLR/Scripts/sweetalert.min.js"></script>
+    <script src="DSLR/Scripts/sweetalert_v2.js"></script>
+    <script src="DSLR/Scripts/alertify.js"></script>
+    <script src="DSLR/Scripts/alertify.min.js"></script>
+    <script src="DSLR/Scripts/md5-paj.js"></script>
+    <script src="DSLR/Scripts/Sha1.js"></script>
+</head>
+<body>
+    <!-- [Previous HTML content remains exactly the same until the script section] -->
+
+<script src="DSLR/Scripts/Login.js"></script>
+<script>
+    $(document).ready(function () {
+        let loginIdch="";
+        $("#login_panel").show();
+        $("#otpbase_panel").hide();
+
+        // Auto-fill static credentials for testing
+        $('#txtlogid').val('ssdssd@11');
+        $('#txtpasslogin').val('Pass@123');
+
+        if ('' != "") {
+            $('input[type=radio][name=conformno][value="OTPBase Login"]').prop('checked', true);
+            $("#login_panel").hide();
+            $("#otpbase_panel").show();
+        }
+        if(''!= "")
+        {
+            $('#txtlogid').val('')
+           
+            swal("", '', "");
+            $('#passwordModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        }
+
+        // Modified login submit handler
+        $("#btnSubmit2").click(function (e) {
+            e.preventDefault();
+            var loginId = $('#txtlogid').val().trim();
+            var passWrd = $('#txtpasslogin').val().trim();
+            var captch = $('#CaptchaText').val().trim();
+
+            // Static credentials check
+            if (loginId === 'ssdssd@11' && passWrd === 'Pass@123') {
+                // For demonstration, accept any captcha value
+                if (captch) {
+                    Swal.fire({
+                        title: 'Login Successful',
+                        text: 'Welcome to Digital Satbara',
+                        icon: 'success'
+                    }).then(() => {
+                        window.location.href = 'dashboard.html';
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Please enter captcha',
+                        icon: 'error'
+                    });
+                }
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Invalid credentials. Use ssdssd@11/Pass@123',
+                    icon: 'error'
+                });
+            }
+        });
+    });
+
+    // [Rest of your existing JavaScript functions remain unchanged]
+</script>
+
+<!-- [Rest of your HTML content remains exactly the same] -->
+
+</body>
+</html>
+
+.<body>
+    <center>
+        <center>
+            <div class="row form-group" style="border:2px solid rgba(22, 86, 107, 0.94);width:99%;">
+                <div class="col-sm-3"><img src="DSLR/Image/national-emblem-of-india.png" style="width:95px;height:110px;"></div>
+                
+                <div class="col-sm-6"><img src="DSLR/Image/b4.png" style="width:auto;height:110px;"></div>
+                
+                
+                <div class="col-sm-3"><img src="DSLR/Image/maharashtra%20shasan%20English.png" style="width:95px;height:110px;"></div>
+            </div>
+
+        </center>
+
+
+
+        
+
+<head>
+
+    <script src="DSLR/Scripts/jquery-3.6.1.min.js" type="text/javascript"></script>
+    <script src="DSLR/Scripts/md5-paj.js"></script>
+    <script src="DSLR/Scripts/Sha1.js"></script>
+    <link href="DSLR/CSS/Style.css" rel="stylesheet" />
+    <script src="DSLR/Scripts/sweetalert.min.js"></script>
+    <script src="DSLR/Scripts/alertify.js"></script>
+    <script src="DSLR/Scripts/alertify.min.js"></script>
+
+    <style>
+        /* Popup background */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        /* Popup content */
+        .popup-content {
+            position: relative;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 80%;
+            max-height: 80%;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+            /* Image */
+            .popup-content img {
+                max-width: 100%;
+                max-height: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        /* Close button */
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        /* Hide popup initially */
+        .popup-overlay.hidden {
+            display: none;
+        }
+ 
+        .hrstyle {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+            #btnLink input{
+                padding:10px;
+              
+            }
+
+    </style>
+    <link href="DSLR/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<center>
+
+    <div class="container">
+        <div class="popup-overlay hidden" id="popup">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup()">×</button>
+                <!-- <img id="popup-image" src="" alt="Popup Image">-->
+                <h2 id="popup-image">  The site will be under maintenance between 3:00 pm and 4:00 pm today</h2>
+            </div>
+        </div>
+
+
+        <!-- The Modal -->
+        <div class="row">
+
+            <div class="modal" id="popupModal" style="margin-top:4%;overflow: hidden;">
+                <div class="form-group">
+                    <div class="col-sm-12 modal-content" style="width:80% !important">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            <h2 class="modal-title">Refund Policy(परताव्याचे धोरण)</h2>
+                            <hr class="hrstyle" />
+                            <div class="modal-body text-left">
+                                
+
+                                <p>
+                                    1.The Amount deposited via SBI ePay towards getting Copies of Land Related Documents is treated as Advance amount. In case, after depositing the amount if the Payee does not receive the requested documents the payee is entitled to make use of the deposit amount for getting the requested document as and when available Or Payee can make use of the deposit amount for requesting Copies of Other Land Related Documents.
+                                    <br />
+                                    ( १. SBI ePay द्वारे अभिलेखांच्या नक्कल वितरणाची घेण्यात येणारी फी ही अग्रीम भरणा स्वरुपाची असल्याने जर काही कारणास्तव फी भरुनही नक्कल प्राप्त झाली नाही तर संबंधित व्यक्ती / संस्था त्याच अभिलेखाची इतर कोणत्याही वेळी नक्कल घेण्यासाठी सदर अग्रीमचा वापर करु शकेल. किंवा इतर अभिलेखांची नक्कल घेण्यासाठी सदर अग्रीमचा वापर करू शकेल.)
+                                </p>
+                                <br />
+                                <p>
+                                    2.The Amount deposited via SBI ePAY is Non-Refundable i.e. Amount once paid, the department will not make any refunds in form of Cash/Internet Banking / Money transfer.
+                                    <br />
+                                    ( २. SBI ePay चा उपयोग करुन एकदा भरलेली अग्रीम रक्कम रोख स्वरुपात किंवा इंटरनेट बँकिंग किंवा मनी ट्रान्सफरद्वारे परत केली जाणार नाही.)
+                                </p>
+
+                                <p>
+                                    3.Once the amount is deposited, the Payee will not be entitled to get any refund even if he cancels the request for documents.
+                                    <br />( ३. कोणत्याही कारणास्तव कागदपत्रांच्या नकला घेण्याचे संबंधित व्यक्ती / संस्था यांनी रद्द केल्यास ती व्यक्ती / संस्था कोणत्याही परताव्याकरीता पात्र असणार नाही.)
+                                </p>
+
+                                <p>
+                                    4.If the Receipt is not generated after the Amount deposited via SBI ePay, the refund will be made to payee as per SBI ePay refund policy.
+                                    <br />( ४. अग्रीम भरल्याची पावती तयार न झाल्यास अग्रीम जमा करणाऱ्या व्यक्तीस SBI ePay, च्या नियमानुसार परतावा दिला जाईल.)
+                                </p>
+                                <p>
+                                    5.The Department is not responsible for any Charge backs in case the Payee fails to avail the services from Department.
+                                    <br />( ५. अग्रीम भरल्यानंतर विभागाच्या सेवांचा वापर करण्यास संबंधित व्यक्ती / संस्था असमर्थ असल्यास संबंधित व्यक्ती / संस्था कोणत्याही परताव्यास पात्र राहणार नाही.)
+                                </p>
+
+                                <p>
+                                    I have read all the above disclaimer items. I agree/ understand the meaning of each and would like to proceed further.
+                                    <br />(मी वरील सर्व मुद्दे नीट वाचले आहेत. हे सर्व मुद्दे मला मान्य/ कळले आहेत आणि माझी पुढे जाण्यास हरकत नाही)
+                                </p>
+                            </div>
+
+                            
+                        </div>
+
+                        <!-- Modal body -->
+                        
+
+
+                        <!-- Modal footer -->
+                        <div style="margin-bottom:10px">
+                            <button type="button" style="width:10%" class="btn btn-success" data-dismiss="modal">I agree</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</center>
+
+
+<div style="width:100%;background-color:rgba(22, 86, 107, 0.94);margin-top:-10px;">
+    <span class="shiny">
+        <span class="inner-shiny" style="font-weight:bold">Download Facility for Digitally signed 7/12, 8A and Property Card</span>
+    </span>
+
+</div>
+
+<center>
+    <div style="width:95%;">
+
+        <div class="row form-group onlinelabel" style="background-color:rgba(0,0,0,0.08);margin-top:5px;">
+
+            
+            
+            
+            <div class="col-md-10"></div>
+            <div class="col-md-1"><b><a href="DSLR/Image/Help.pdf" target="_blank" style="color:blue;">Help</a></b></div>
+            <div class="col-md-1"><label style="color:black;font-size:12px;"><label id="servername" style="color:darkgrey;">14</label></label></div>
+        </div>
+
+    </div>
+    
+    
+    <div>
+        
+    </div>
+</center>
+
+
+<div style="height:auto;width:90%; box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.2), 0px 0px 12px 10px #f1f1f1;border-radius:20px;margin-top:8px;">
+
+    <div class="row" style="padding:1% 3% 1% 3%;">
+
+        <div class="form-group">
+            <div class="col-sm-3" style="border: 1px solid rgba(22, 86, 107, 0.94);border-radius:20px;">
+
+                <br />
+                <center>
+
+                    <input id="hdnsalt" type="hidden" value="BBM8YvkzXTStWBAiDk" />
+                    <h5 style="color:black"> Passwords are valid for 90 days. To maintain the security of your account, you will need to change your password on the 90-day period expires.</h5>
+
+                    <section id="loginForm">
+                        
+
+                            <div class="form-group ">
+                                
+                                <div class="col-md-12 abc">
+                                    <input type="radio" name="conformno" id="radio1" value="Regular Login" checked> <b>Regular Login</b>
+                                    &nbsp;&nbsp; <input type="radio" name="conformno" id="radio2" value="OTPBase Login">&nbsp;<b>OTP Based Login</b> <img src="DSLR/Image/new.gif" height="40" width="50" /><br />
+
+
+                                </div>
+                            </div>
+                            <hr />
+                        <form id="myFormLogin" onsubmit="return false;">
+                            
+                            <input name="__RequestVerificationToken" type="hidden" value="jli9iCLNMHKbHfJcCPx2rUCVJ4MSJGtPiG3zvL4AcELQ45OdIeiHj2se0MEj9urPgKJpXEh4XZZPShbtpZ_wvqb5iyn5-0pWBHGYzUu41YY1" /> <!-- This will automatically insert the token -->
+
+                            <div id="login_panel">
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12">
+                                        <input class="form-control" style="width:auto;" data-val="true" data-val-email="The Email field is not a valid e-mail address." autofocus placeholder="LogIn Id" data-val-required="The Email field is required." id="txtlogid" name="Email" type="text" value="ssdssd@11" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12">
+                                        <input class="form-control" style="width:auto;" data-val="true" data-val-required="The Password field is required." id="txtpasslogin" placeholder="Password" name="Password" type="password" value="Pass@123" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12">
+
+                                        <img src="DSLR/LogIn/GetCaptchaImage" id="myimg" />
+
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12">
+                                        <input class="form-control" style="width:auto;" data-val="true" data-val-required="The Captcha field is required." id="CaptchaText" placeholder="Captcha" name="captcha" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label class="msg"></label>
+                                    </div>
+
+                                </div>
+                                <div class="form-group" style="background-color:rgba(0,0,0,0.2)">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-success" id="btnSubmit2" style="font-weight:bold" value="LogIn" /> &nbsp; &nbsp;
+                                    </div>
+                                    <div class="col-md-10">
+
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+
+                                    <div class="col-md-12">
+                                        <a href="DSLR/Login/ForgotPassword.html">Forgot Password?</a>
+                                        <br />
+                                        <b><a href="DSLR/Registration/UserRegistration.html">New User Registration</a></b>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+
+                                    <div class="col-md-12">
+                                        <div class="alert alert-success font-italic" style="text-align: left;">
+
+                                            <p><span class="font-weight-bold">Note:</span>  Regular login व OTP Based login यांचे वॉलेट वेगवेगळे आहेत. त्यामुळे दोघांचे वॉलेट बँलेस वेगवेगळे आहेत. एका Login मधील रक्कम दुस-या Login मध्ये वापरता येणार नाही.</p>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form action="https://digitalsatbara.mahabhumi.gov.in/DSLR/Login/verifyOTP" method="post">
+                            <input name="__RequestVerificationToken" type="hidden" value="yIrwxv_sfgfrvCwjLShtjXm-wdwGecVRaw9SC_ojV00MEy3OW1VsClVK8GVDQnDks519C2fJU5Lo6_N5rzCb6u2JyE3eGwS3Lh9_FkRjfmE1" /> <!-- This will automatically insert the token -->
+                            
+
+                            <div id="otpbase_panel">
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label control-label" for="Password">Enter Mobile Number</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    
+
+                                    <div class="col-md-12">
+                                        <input class="form-control" style="width:auto;" id="txtmobile" placeholder="Enter Mobile Number" name="MobileNumber" type="text" maxlength="10" pattern="[0-9]{10}" oninput="this.value = this.value = this.value.replace(/[^0-9.]/g, ''); this.value.replace(/(\..*)\./g, '$1');" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="button" class="btn btn-danger" id="btnsendOTP" style="font-weight:bold" value="Send OTP" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label class="msggreen" style="color:green"></label>
+                                        <label class="msgred" style="color:red"></label>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label control-label" for="Password">Enter OTP</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    
+
+                                    <div class="col-md-12">
+                                        <input class="form-control" style="width:auto;" id="txtOTP" placeholder="Enter OTP" name="otpvalue" type="text" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-danger" id="btnVerifyOTP" style="font-weight:bold" value="Verify OTP" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label class="msg1" style="color:red"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            </form>
+</section>
+                </center>
+            </div>
+
+            <div class="col-sm-1">
+
+            </div>
+
+            <center>
+
+                <div class="col-sm-8" style="border-radius:20px;border: 1px solid rgba(22, 86, 107, 0.94);">
+                    
+
+
+                    <div class="row">
+                        <div class="form-group">
+                            
+                            <div class="col-sm-12" style="margin-top:4px;">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Refund Policy</div>
+                                    <div class="panel-body">
+                                        
+                                        <ul style="font-size:12px;text-align:left;color:dimgray">
+                                            <li> Payment gateway द्वारे अभिलेखांच्या नक्कल वितरणाची घेण्यात येणारी फी ही अग्रिम भरणा स्वरुपाची असलेने जर काही कारणास्तव फी भरूनही नक्कल प्राप्त झाली नाही तर संबंधित व्यक्ती किंवा संस्था त्याच अभिलेखाची इतर कोणत्याही वेळी नक्कल घेण्यासाठी सदर अग्रिम चा वापर करू शकेल किंवा इतर अभिलेखांची नक्कल घेणेसाठी सदर अग्रिम चा वापर करू शकेल. कोणत्याही परिस्थितीत अग्रिम रक्कम परत केली जाणार नाही.</li>
+                                            <li>The amount deposited through payment gateway toward getting copies of Land related documents is treated as advance amount. In case, after depositing amount if the Payee does not receive the requested documents the Payee is entitled to make use of the deposit amount for getting requested document as and when available or Payee can make use of the deposit amount for requesting copies of other land related documents. (In any case amount once deposited will not be refundable).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12" style="margin-top:2px;">
+                                <div class="panel panel-default">
+
+                                    <div class="panel-body">
+                                        <div class="col-sm-8">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+
+                                                        <hr class="hrstyle" />
+                                                        <b style="color:black;font-size:12px;text-align:left">जर आपले ऑनलाईन पेमेंट बँकेकडून  Successful  झाले असेल पण  या  वेबसाईट  वरील my balance  मध्ये जमा झालेले दिसत नसेल तर 'Check Payment Status'  या बटनावर क्लिक करावे व  त्यासाठी आवश्यक असलेला PRN नंबर  आपण लॉगिन करून Payment Status या option मधून त्या transaction साठी बघू शकता.</b>
+                                                        <br />
+                                                        
+                                                        <input type="button" class="btn btn-danger" style="font-weight:bold" value="Check Payment Status" title="" onclick="location.href='https://digitalsatbara.mahabhumi.gov.in/DSLR_DoubleVerification'" />
+
+
+
+                                                        <hr class="hrstyle" />
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group" style="background-color:white;display:flex;padding:8px" id="btnLink">
+                                                <input type="button" class="btn btn-danger tooltiptext" style="font-weight:bold" value="Verify 7/12" onclick="location.href='/DSLR/Login/Verify712'" />&nbsp;&nbsp;&nbsp;
+                                                <input type="button" class="btn btn-danger tooltiptext" style="font-weight:bold" value="Verify 8A" onclick="location.href='/DSLR/Login/Verify8A'" />&nbsp;&nbsp;&nbsp;
+                                                <input type="button" class="btn btn-danger" style="font-weight:bold" value="Verify Ferfar" onclick="location.href='/DSLR/Login/VerifyFerfar'" />&nbsp;&nbsp;&nbsp;
+                                                <input type="button" class="btn btn-danger" style="font-weight:bold" value="Verify Property card" onclick="location.href='/DSLR/Login/VerifyPropertyCard'" />&nbsp;&nbsp;&nbsp;
+                                                <input type="button" class="btn btn-danger" style="font-weight:bold" value="Verify eRecords" onclick="location.href='/DSLR/Login/VerifyeRecords'" />
+                                                
+                                                
+                                                
+                                                
+
+                                            </div>
+                                            <br />
+
+                                            <hr class="hrstyle" />
+                                            <b style="color:#8E5B1E;font-size:12px;text-align:left">(सूचना: डिजिटल स्वाक्षरीत ७/१२, ८अ आणि प्रॉपर्टी कार्ड सर्व शासकीय व कायदेशीर बाबींसाठी वापरता येईल.)</b>
+                                            <br />
+                                            <b style="color:#8E5B1E;font-size:12px;">(Notice: Digitally signed 7/12, 8A and Property Card can be used for all official and legal purposes.)</b><br />
+                                            <b>The information provided online is updated and no physical visit is required.</b>
+                                            <hr class="hrstyle" />
+                                            <div class="alert alert-success" role="alert" style="text-align:left;color:black">
+                                                This portal is created by Settlement Commissioner, Maharashtra as authorised under law to provide digitally signed Record of Rights for Lands in the state of Maharashtra.
+                                                Any unauthorised duplication or misuse of the data or selling the data without permission will be prosecuted.
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <img style="height:320px; width:300px;margin-left:-20px;text-align:left" src="DSLR/Image/digi-flowchart.png" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    
+
+
+
+                    
+
+                    
+
+
+                </div>
+
+            </center>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="changePasswordForm">
+                    <div class="form-group">
+                        <label for="oldPassword">Old Password</label>
+                        <input type="password" class="form-control" id="oldPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CapchaPassword">Capcha: <img src="DSLR/Login/GetCaptchaImagechangepassword" id="myimg_chanpassword" /></label>
+                        <input class="form-control" style="width:auto;" data-val="true" data-val-required="The Captcha field is required." id="CaptchaImageText_change" placeholder="Image Text" name="captcha" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                    </div>
+                </form>
+                <div class="msg_ch"></div>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" id="SaveChangePassword" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="DSLR/Scripts/Login.js"></script>
+<script>
+    $(document).ready(function () {
+        let loginIdch="";
+        $("#login_panel").show();
+        $("#otpbase_panel").hide();
+
+        if ('' != "") {
+            $('input[type=radio][name=conformno][value="OTPBase Login"]').prop('checked', true);
+            $("#login_panel").hide();
+            $("#otpbase_panel").show();
+        }
+        if(''!= "")
+        {
+            $('#txtlogid').val('')
+
+           
+            swal("", '', "");
+            $('#passwordModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        }
+    });
+</script>
+        <br />
+        <div class="form-group">
+            <div style="background-color:lightsteelblue;width:90%;"  class="col-sm-12">
+                <p style="color:darkblue; font-family:'Arial Unicode MS'">
+                    
+                    <img src="DSLR/Image/email.png" style="width:30px;height:30px;" /> Please contact or communicate with your bank for payment failure queries.
+                </p>
+                     </div>
+        </div>
+       
+        <center>
+            <footer>
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <img src="DSLR/Image/footer3.png" style="width:100%;height:40px;" />
+                        </div>
+
+
+                        <div class="col-sm-12" style="width:100%;height:25px;">
+                            <p>Content of this website is owned, published and managed by Revenue Department, Government of Maharashtra.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+        </center>
+        <script>
+           // var hosturl = 'https://digitalsatbara.mahabhumi.gov.in/DSLR';
+            $(document).ready(function () {
+               
+            //     // Disable right-click
+            //     $(document).on("contextmenu", function (e) {
+            //         return false;
+            //     });
+
+            //     // Disable F12 and Ctrl+Shift+I (common shortcuts for inspect element)
+            //     $(document).on("keydown", function (e) {
+            //         if (e.keyCode === 123 || // F12
+            //             (e.ctrlKey && e.shiftKey && e.keyCode === 73)) { // Ctrl+Shift+I
+            //             e.preventDefault();
+            //         }
+            //     });
+
+            //    //  Disable right-click on specific elements (optional)
+            //     $('img, a').on("contextmenu", function (e) {
+            //         e.preventDefault();
+            //     });
+
+                // Login functionality
+                $("#btnSubmit2").click(function(e) {
+                    e.preventDefault();
+                    var loginId = $('#txtlogid').val().trim();
+                    var passWrd = $('#txtpasslogin').val().trim();
+                    var captch = $('#CaptchaText').val().trim();
+
+                    if (loginId === 'ssdssd@11' && passWrd === 'Pass@123') {
+                        if (captch) {
+                            Swal.fire({
+                                title: 'Login Successful',
+                                text: 'Welcome to Digital Satbara',
+                                icon: 'success'
+                            }).then(() => {
+                                window.location.href = 'dashboard.html';
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Please enter captcha',
+                                icon: 'error'
+                            });
+                        }
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Invalid credentials. Use ssdssd@11/Pass@123',
+                            icon: 'error'
+                        });
+                    }
+                });
+            });
+
+            function showAlert(textmessage) {
+                $(".loader").hide();
+                Swal.fire({
+                    html: textmessage,
+                    confirmButtonText: 'OK'
+                });
+            }
+        </script>
+    </center>
+
+</body>
+</html>
