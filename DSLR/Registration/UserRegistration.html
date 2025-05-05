@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+   
+    <title>UserRegistration - Digitally signed Satbara </title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/Style.css" rel="stylesheet" />
+    <script src="../Scripts/sweetalert.min.js"></script>
+    <script src="../Scripts/sweetalert_v2.js"></script>
+</head>
+<body>
+    <center>
+        <center>
+            <div class="row form-group" style="border:2px solid rgba(22, 86, 107, 0.94);width:99%;">
+                <div class="col-sm-3"><img src="../Image/national-emblem-of-india.png" style="width:95px;height:110px;"></div>
+                
+                <div class="col-sm-6"><img src="../Image/b4.png" style="width:auto;height:110px;"></div>
+                
+                
+                <div class="col-sm-3"><img src="../Image/maharashtra%20shasan%20English.png" style="width:95px;height:110px;"></div>
+            </div>
+
+        </center>
+
+
+
+        
+
+
+
+
+
+<link href="../Content/bootstrap.css" rel="stylesheet" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="../Scripts/jquery-3.6.1.min.js" type="text/javascript"></script>
+
+<script src="../Scripts/md5-paj.js" type="text/javascript"></script>
+<script src="../Scripts/Sha1.js" type="text/javascript"></script>
+<script src="../Scripts/registration.js" type="text/javascript"></script>
+
+<script src="../Scripts/jquery-ui.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+<style type="text/css">
+    .ui-datepicker {
+        background: #D8CEF6;
+        border: 1px solid #2A0A0A;
+        color: #2A0A0A;
+        width: 270px;
+        height: auto;
+        margin: 5px auto 0;
+        font: 11pt Arial, sans-serif;
+        -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 20);
+        -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 20);
+        -box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 20);
+    }
+
+    .loader {
+        background: #D8CEF6;
+        border: 1px solid #2A0A0A;
+        color: #2A0A0A;
+        width: 270px;
+        height: auto;
+        margin: 5px auto 0;
+        font: 11pt Arial, sans-serif;
+        -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 20);
+        -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 20);
+        -box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 20);
+    }
+
+    .loginhead {
+        height: 33px;
+        box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 8px 8px rgba(0, 0, 0, 0.10);
+    }
+
+    .hrstyle {
+        border: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+    .mandatoryfield{
+        color:red;
+    }
+</style>
+
+<form action="UserRegistration.html" autocomplete="off" method="post"><input name="__RequestVerificationToken" type="hidden" value="aP9jLKfPkRS0wdhNyvlIGLkpXuN8QD9SrZ0Ue62SAU4Xgzmnlkn21R2rHF76RwCWnTYnlO6qjztpQsjZGHFor3w_ZgmONkLEvyNXI-eGoq81" />    <div class="row haed">
+
+        <div class="loginhead form-group">
+            <div class="col-sm-12">
+                <button id="BasicSearch" class="btn btn-success" style="width:90px;float:right" type="button" onclick="window.location.href=&#39;/DSLR/&#39;;" value="BasicSearch"><span>LogIn</span></button>
+            </div>
+        </div>
+    </div>
+    <center>
+        <div class="container" style="border: 1px solid rgba(22, 86, 107, 0.94);border-radius:20px;">
+            <div class="row" id="form1">
+
+                <div class="col-sm-12">
+                    <div class='table-responsive'>
+                        
+
+
+                        <div class="row form-group">
+                            <div class="col-sm-12">
+                                <div class="col-sm-12">
+                                    <h2 style="font-family:Arial;color:black"><B>NEW USER REGISTRATION</B></h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class='col-sm-12'>
+                                <h4 style="color:blue">PERSONAL INFORMATION</h4>
+                            </div>
+                        </div>
+                        <hr class="hrstyle" />
+
+                        <div class="row form-group">
+                         
+
+                            <div class="col-sm-2">
+                                <label for="First Name">First Name</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <div style="display:flex;">
+                                    <input type='text' class="form-control" name="name" id="firstName" placeholder="First Name" required />
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                    </div>
+                                    <span style="font-size:10px;">(Space,Sp.Character Not Allowed)</span>
+                                </div>
+                            <div class="col-sm-2">
+                                <label for="Middle Name">Middle Name</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="mname" id="middleName" placeholder="Middle Name" />
+                                <span>(Optional)</span>
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="Last Name">Last Name</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <div style="display:flex;">
+                                    <input type='text' class="form-control" name="lname" id="lastName" placeholder="Last Name" required />
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                </div>
+                                    <span style="font-size:10px;">(Space,Sp.Character Not Allowed)</span>
+                                </div>
+                               
+
+                        </div>
+
+
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label for="Gender">Gender</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <select id="gender" class="form-control" name="gender" >
+                                    <option value="" selected="selected">Select Gender</option>
+                                    <option value="Male" >Male</option>
+                                    <option  value="Female">Female</option>
+
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="Nationality">Nationality</label>
+                            </div>
+                            <div class="col-sm-2">
+                                
+                                <select id="ddlnationality" class="form-control" name="ddlnationality" >
+                                    
+                                    <option selected="selected">Indian</option>
+                                    <option>Other</option>
+                                </select>
+                                
+                                
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="Mobile Number">Mobile Number</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                
+                                <div style="display:flex;">
+                                    <input type="text" class="form-control" name="mobileNo" id="mobileNo" name="mob" minlength="4" maxlength="15" pattern="[0-9]{10}" oninput="this.value = this.value = this.value.replace(/[^0-9.]/g, ''); this.value.replace(/(\..*)\./g, '$1');" placeholder="Mobile Number" required />
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                </div>
+                                <span id="mobileVerificationMsg"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label for="Occupation">Occupation</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select id="occupation" class="form-control" name="occupation" >
+                                    <option value="" selected="selected">Select Occupation</option>
+
+                                    <option value="Bussiness">Bussiness</option>
+                                    <option value="Service">Service</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="Email ID">Email ID</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="email" id="email" placeholder="Email ID"  />
+                                
+                                <span id="emailVerificationMsg"></span>
+                            </div>
+                            <div class="col-sm-2">
+                                
+                                <label for="DOB">DOB</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <div style="display:flex;">
+                                    <input type="text" class="form-control" name="dob" id="dob" placeholder="DOB" />
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-12"><h4 style="color:blue">ADDRESS INFORMATION</h4></div>
+                        </div>
+
+                        <hr class="hrstyle" />
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label for="Flat/Home No">Flat No</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="flatno" id="flatno" placeholder="Flat No"  />
+                                
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="Floor Number">Floor Number</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="floorno" id="floorno" placeholder="Floor Number"  />
+                                
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="Building Name">Building Name</label>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="BuildingNm" id="BuildingNm" placeholder="Building Name"  />
+                                
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
+                            <div class="hidepincodearea">
+                                <div class="col-sm-2">
+                                    <label for="Pincode:">Pincode</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type='text' class="form-control" name="pincode" id="pincode" maxlength="6" placeholder="Pincode" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+                                           pattern="[0-9]{10}"  />
+                                    
+                                    <span id="pincodeVerificationMsg"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <label for="Street/Road :">Street Road</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="Street" id="Street" placeholder="Street Road"  />
+                                
+                            </div>
+                          
+                            <div class="col-sm-2">
+                                <label for="Location:">Location</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="Location" id="Location" placeholder="Location"  />
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hide_city_dist_state row form-group">
+                            <div class="col-sm-2">
+                                <label for="City/Area:">City Area</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select id="city" class="form-control" name="city" >
+                                    <option value="" selected="selected">Select City Area</option>
+                                </select>
+                                
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="District:">District</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="district" id="district" placeholder="SelectDistrict"  />
+                                
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="State:">State</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='text' class="form-control" name="state" id="state" placeholder="State"  />
+                                
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <h4 for="Login Information" style="color:blue">LOGIN INFORMATION</h4>
+                            </div>
+                        </div>
+                        <hr class="hrstyle" />
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label for="User ID:">LogIn Id</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <div style="display:flex;">
+                                    <input type='text' class="form-control" name="userid" id="userid" placeholder="Enter LogIn Id" required />
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                    </div>
+                                    <span id="useridVerificationMsg"></span>
+                                </div>
+                            
+                            <div class="col-sm-2">
+                                    <button id="btnVerify" class="verifybtn btn btn-success" type="button" value="Verify"  style="width:150px; height:30px;">Check Avialability</button>
+                                </div>
+                            <div class="col-sm-3">
+                                <span id="verifyuseridMsg" style="color:Blue;"></span><br />
+                            </div>
+                            <div class="col-sm-5">
+                            </div>
+                        </div>
+
+
+                        <div class="row hideRow form-group">
+                            <div class="col-sm-2">
+                                <label for="Password:">Password </label>
+                            </div>
+                            <div class="col-sm-2">
+                                <div style="display:flex;">
+                                    <input type='password' name="pwd" id="pwd" class="form-control" placeholder="Password" minlength="6" maxlength="15" required />
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                    </div>
+                                    <p style="font-size:smaller">(Exp:Username@1xyz)</p>
+
+                                </div>
+                            <div class="col-sm-2">
+                                <label for="Password:"> Select Secret Question</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <div style="display:flex;">
+                                    <select id="ddlquestion" name="ddlquestion" class="form-control">
+                                        <option selected="selected">Select Secret Question</option>
+                                    </select>
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                    </div>
+                                </div>
+                            <div class="col-sm-2">
+                                <label for="Answer of select Question">Answer of selected Question</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <div style="display:flex;">
+                                    <input type='text' id="answer" name="answer" class="form-control" placeholder="Answer of selected Question" required />
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                    </div>
+                                </div>
+
+                        </div>
+
+                        <div class="row hideRow form-group">
+                            <div class="col-sm-12">
+                                <span style="color:blue" >Password must be between 6 and 15 characters,contain at least one digit and one alphabetic character,at least 1 upper case character, and contain at least one special character.</span>
+                            </div>
+                        </div>
+                        <div class="row hideRow form-group">
+                            <div class="editor-field col-sm-2">
+                                <img src="GetCaptchaImage" id="myimg" style="width:180px;" />
+                                <span>Captcha</span>
+                            </div>
+                            <div class="editor-field col-sm-2">
+                                <div style="display:flex;">
+
+
+                                    <input type="text" name="CaptchaText" class="form-control" id="CaptchaText" placeholder="Enter Captcha" required />
+
+                                    
+                                    <span class='mandatoryfield'>&#160;*</span>
+                                </div>
+                                   <span class='mandatoryfield1'></span>
+                                   
+                                </div>
+                           
+                         
+                            <div class="col-sm-2"><p style="color:red" class="errorMessage"></p></div>
+                            <div class="col-sm-2">
+
+                                <button id="btnCancel" class="btn btn-danger" type="button" value="Cancel">
+                                    Cancel
+                                </button>
+
+                            </div>
+                            &nbsp;
+                            <div class="col-sm-2">
+                                <button id="btnSubmit" class="btn btn-success" type="button" value="Submit">
+                                    Submit
+                                </button>
+                            </div>
+                            <div class="col-sm-2">
+                                <label id="statusMsg"></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type='hidden' value='true' id='searchflag' />
+                            </div>
+
+                        </div>
+
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+       </div>
+    </center>
+</form>
+        <br />
+        <div class="form-group">
+            <div style="background-color:lightsteelblue;width:90%;"  class="col-sm-12">
+                <p style="color:darkblue; font-family:'Arial Unicode MS'">
+                    
+                    <img src="../Image/email.png" style="width:30px;height:30px;" /> Please contact or communicate with your bank for payment failure queries.
+                </p>
+                     </div>
+        </div>
+       
+        <center>
+            <footer>
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <img src="../Image/footer3.png" style="width:100%;height:40px;" />
+                        </div>
+
+
+                        <div class="col-sm-12" style="width:100%;height:25px;">
+                            <p>Content of this website is owned, published and managed by Revenue Department, Government of Maharashtra.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+        </center>
+        <script>
+            var hosturl = 'https://digitalsatbara.mahabhumi.gov.in/DSLR';
+            $(document).ready(function () {
+               
+                // Disable right-click
+                $(document).on("contextmenu", function (e) {
+                    return false;
+                });
+
+                // Disable F12 and Ctrl+Shift+I (common shortcuts for inspect element)
+                $(document).on("keydown", function (e) {
+                    if (e.keyCode === 123 || // F12
+                        (e.ctrlKey && e.shiftKey && e.keyCode === 73)) { // Ctrl+Shift+I
+                        e.preventDefault();
+                    }
+                });
+
+               //  Disable right-click on specific elements (optional)
+                $('img, a').on("contextmenu", function (e) {
+                    e.preventDefault();
+                });
+            });
+
+            function showAlert(textmessage) {
+                $(".loader").hide();
+                Swal.fire({
+                    html: textmessage,
+                    //icon: 'info',
+                    confirmButtonText: 'OK'
+                });
+            }
+          
+           
+          
+        </script>
+
+        <script src="../bundles/jquery%3Fv=MzON5IcofK5gzJk3buiJr2EmQ2418O431sJOCWpeGBY1"></script>
+
+        <script src="../bundles/bootstrap%3Fv=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+
+        
+    </center>
+</body>
+</html>
