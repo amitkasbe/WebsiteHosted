@@ -1,0 +1,304 @@
+﻿body {
+    font-family: Verdana;
+    font-size: 12;
+}
+
+.data
+{
+	width:300px;
+	height:30px;
+	font-family:Verdana;
+	font-size:12;
+}
+
+.tabb
+{
+	/*height:10%;*/
+	background-color:#FB9923;
+	
+	
+}
+
+.tabdash
+{
+    box-shadow: 0 5px 5px 0 #333, 0 10px 20px 0 rgba(0,0,0,0.19);
+}
+.tabdash:hover
+{  
+    box-shadow: 0 20px 20px 0 #333, 0 30px 50px 0 rgba(0,0,0,0.19);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.tab
+{	height:auto;
+	background-color:#FB9923;
+	
+}
+.table1
+{
+	/*margin-top:10px;*/
+	border: 2px solid #8E5B1E;
+	height:auto;
+}
+ td {
+    padding: 10px;
+    text-align: left;
+}
+  .hrstyle {
+        border: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    
+        .button 
+        {
+            box-shadow: 0 16px 16px 0 rgba(0,0,0,0.24), 0 30px 50px 0 rgba(0,0,0,0.19);
+            font-size: 16px;
+            font-weight:normal;
+            font-family:  Arial;
+            color: #000000;
+            
+            min-width: 70px;
+            height: 30px;   
+            cursor: pointer;  
+            padding: 0 10px 2px;
+            text-align: center;
+            border-radius: 2px 2px 2px 2px;
+            border:#8B4513; 
+                       
+            background: -webkit-gradient(linear, left top, left bottom, from(#FFD700), to(#FFA500)); /* for webkit browsers */
+        }
+    
+   
+        
+    table 
+    { 
+        background-color: #ffffff;
+        /*margin-top:10px;*/
+	    border: 1px #8E5B1E;
+	    /*height:auto;*/
+        
+        /*width:45%; */
+        /*background-image: url(img/pic3.png); */
+        /*box-shadow: 5px -10px 10px #708090;*/
+        border-collapse: collapse;
+        border-collapse: separate;
+
+        border-collapse: inherit;   
+         
+     } 
+    
+  #help
+  {
+  	float:right;
+  }  
+  
+  .col2
+{
+	width:13%;
+	
+}
+  
+  /*  Div Table */
+
+
+.collog1
+{
+	float : left;
+	margin :30px 0 0 5px;
+	height :30px;
+	width :170px;
+	font-family:Verdana;
+	font-size:12px;
+	font-weight: bold;
+
+}
+.collog2
+{
+	float : right;
+	margin :30px 70px 0 0;
+	height :30px;
+	width :180px;
+	font-family:Verdana;
+	font-size:12px;
+	font-weight: bold;
+}
+.tablelogin
+{
+	border: 2px solid #8E5B1E;
+    outline-color:#8E5B1E;
+	height :auto;
+	width :450px;
+	float :right ;
+	box-shadow: 0  0 8px 4px   rgba(0, 0, 0, 0.3),  0 0 20px 6px rgba(0, 0, 0, 0.20);
+	margin :0 100px 0 0;
+	top :200px;
+
+	border-radius: 25px;
+	
+
+}
+.tablelogin:hover
+{
+        border:4px solid #8E5B1E;
+    
+}
+.emsg,.msg
+{
+	font-family:Verdana;
+	font-size:14px;
+	font-weight: bold;
+	color:Red;
+}
+
+
+
+  .tablelogin123
+{
+    
+    background-color:#FCEED6;
+	height :10%;
+	
+	float :right ;
+	border-left-style:solid;
+}
+.text123
+{
+background: #FCEED6;
+color: #333;
+width: 150px;
+padding: 7px 15px 7px 20px;
+transition: 500ms all ease;
+border: 1px solid #333;
+}
+
+.text123:hover
+{
+
+box-shadow: 12px 13px 0px rgba(100, 50, 51, 0.38),
+-11px -14px 0px rgba(100, 50, 0, 0.28),
+18px -24px 0px rgba(0, 0, 0, 0.34),
+33px -6px 0px rgba(39, 74, 214, 0.28);
+}
+
+
+/* entire container, keeps perspective */
+        .flip-container {
+            perspective: 1000px;
+        }
+            /* flip the pane when hovered */
+            .flip-container:hover .flipper, .flip-container.hover .flipper {
+                transform: rotateY(360deg);
+            }
+
+        /* flip speed goes here */
+        .flipper {
+            transition: 4s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        /* hide back of pane during swap */
+        .front, .back {
+            backface-visibility: hidden;
+            position: absolute;
+        }
+
+        /* front pane, placed above back */
+        .front {
+            transform: rotateY(360deg);
+        }
+
+        /* back, initially hidden pane */
+        .back {
+            transform: rotateY(0deg);
+        }
+
+
+/**********************************************Shiny font***************************************************/
+.shiny
+{
+  color: #F5C21B;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 25px;
+ font-weight:100;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.shiny::before
+{
+	background-position: -180px;
+	-webkit-animation: flare 5s infinite;
+  -webkit-animation-timing-function: linear;
+  background-image: linear-gradient(65deg, transparent 20%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 27%, transparent 27%, transparent 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  content: "";
+  color: #FFF;
+  display: block;
+  padding-right: 140px;
+  position: absolute;
+}
+
+.shiny::after
+{
+  content: "";
+  color: #FFF;
+  display: block;
+  position: absolute;
+  text-shadow: 0 1px #6E4414, 0 2px #6E4414, 0 3px #6E4414, 0 4px #6E4414, 0 5px #6E4414, 0 6px #6E4414, 0 7px #6E4414, 0 8px #6E4414, 0 9px #6E4414, 0 10px #6E4414;
+  top: 0;
+  z-index: -1;
+}
+
+.inner-shiny::after, .inner-shiny::before
+{
+		-webkit-animation: sparkle 5s infinite;
+  -webkit-animation-timing-function: linear;
+	background: #FFF;
+  border-radius: 100%;
+  box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 25px #FFF, 0 0 30px #FFF, 0 0 35px #FFF;
+ content: "";
+  display: block;
+  height: 10px;
+  opacity: 0.7;
+  position: absolute;
+  width: 10px;
+}
+
+.inner-shiny::before
+{
+	-webkit-animation-delay: 0.2s;
+  height: 7px;
+  left: 0.12em;
+  top: 0.8em;
+  width: 7px;
+}
+
+.inner-shiny::after
+{
+  top: 0.32em;
+  right: -5px;
+}
+
+@-webkit-keyframes flare
+{
+  0%   { background-position: -180px; }
+  30%  { background-position: 500px; }
+  100% { background-position: 500px; }
+}
+
+@-webkit-keyframes sparkle
+{
+  0%   { opacity: 0; }
+  30%  { opacity: 0; }
+  40%  { opacity: 0.8; }
+  60%  { opacity: 0; }
+  100% { opacity: 0; }
+}
